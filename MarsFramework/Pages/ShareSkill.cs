@@ -20,6 +20,7 @@ namespace MarsFramework.Pages
             PageFactory.InitElements(Global.GlobalDefinitions.driver, this);
         }
 
+        #region  Initialize Web Elements 
 
         //Click on ShareSkill Button
         [FindsBy(How = How.LinkText, Using = "Share Skill")]
@@ -97,7 +98,7 @@ namespace MarsFramework.Pages
         [FindsBy(How = How.XPath, Using = "//input[@value='Save']")]
         private IWebElement Save { get; set; }
 
-
+        #endregion
 
         internal void EnterShareSkill()
         {

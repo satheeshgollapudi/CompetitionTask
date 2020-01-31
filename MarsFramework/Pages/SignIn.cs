@@ -33,6 +33,7 @@ namespace MarsFramework.Pages
 
         internal void LoginSteps()
         {
+            Global.GlobalDefinitions.wait(60000);
             //extent Reports
             Base.test = Base.extent.StartTest("Login Test");
 
@@ -44,18 +45,18 @@ namespace MarsFramework.Pages
 
             //Click on Sign In tab
             SignIntab.Click();
-            Thread.Sleep(500);
+            
 
             //Enter the data in Username textbox
             Email.SendKeys(Global.GlobalDefinitions.ExcelLib.ReadData(2, "Username"));
-            Thread.Sleep(500);
+           
 
             //Enter the password 
             Password.SendKeys(Global.GlobalDefinitions.ExcelLib.ReadData(2, "Password"));
 
             //Click on Login button
             LoginBtn.Click();
-            Thread.Sleep(1500);
+          
 
             string text = Global.GlobalDefinitions.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/div[1]/a")).Text;
 
